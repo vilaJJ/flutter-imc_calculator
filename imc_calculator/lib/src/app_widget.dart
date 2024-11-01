@@ -17,6 +17,7 @@ class AppWidget extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
       ),
+      themeMode: ThemeMode.system,
       home: const CalculatorPage(),
     );
   }

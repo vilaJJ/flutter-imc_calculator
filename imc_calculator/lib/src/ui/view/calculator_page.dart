@@ -30,22 +30,46 @@ class _CalculatorPageState extends State<CalculatorPage> {
         title: const Text("Calculadora de IMC"),
         centerTitle: true,
       ),
-      body: Center(
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
         child: Column(
           children: [
-            const Icon(
-              Icons.person_2_outlined,
-              size: 128,
+            const Padding(
+              padding: EdgeInsets.symmetric(vertical: 64),
+              child: Icon(
+                Icons.person_2_outlined,
+                size: 128,
+              ),
             ),
-            CalculateTextFieldWidget(
-              controller: heightTextController,
-              prefixIcon: Icons.monitor_weight_rounded,
-              labelText: "Altura (m)",
+            Padding(
+              padding: const EdgeInsets.all(4),
+              child: CalculateTextFieldWidget(
+                controller: heightTextController,
+                prefixIcon: Icons.monitor_weight_rounded,
+                labelText: "Altura (m)",
+              ),
             ),
-            CalculateTextFieldWidget(
-              controller: weightTextController,
-              prefixIcon: Icons.height_rounded,
-              labelText: "Peso (kg)",
+            Padding(
+              padding: const EdgeInsets.all(4),
+              child: CalculateTextFieldWidget(
+                controller: weightTextController,
+                prefixIcon: Icons.height_rounded,
+                labelText: "Peso (kg)",
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 32),
+              child: ElevatedButton.icon(
+                style: ElevatedButton.styleFrom(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 64,
+                    vertical: 16,
+                  ),
+                ),
+                onPressed: () {},
+                icon: const Icon(Icons.calculate_rounded),
+                label: const Text("Calcular"),
+              ),
             ),
           ],
         ),
